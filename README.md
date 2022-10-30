@@ -5,3 +5,6 @@ This is demo application made for the purpose of an assignment using IconFinder 
 ## Instruction to download apk.
 
 - Find apk in release section
+
+# Author
+-Rehan Ahmed Khan
