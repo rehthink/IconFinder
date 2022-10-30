@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/categoryFragment">
+
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.rehthink.iconfinder.ui.category.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_iconSetFragment"
+            app:destination="@id/iconSetFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/iconSetFragment"
+        android:name="com.rehthink.iconfinder.ui.iconset.IconSetFragment"
+        android:label="IconSetFragment"
+        tools:layout="@layout/fragment_icon_set">
+
+
+        <argument app:argType="string"
+            android:name="category"/>
+
+        <action
+            android:id="@+id/action_iconSetFragment_to_iconsFragment"
+            app:destination="@id/iconsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/iconsFragment"
+        android:name="com.rehthink.iconfinder.ui.icons.IconsFragment"
+        android:label="fragment_icons"
+        tools:layout="@layout/fragment_icons" >
+
+        <argument app:argType="integer"
+            android:name="iconSetId"/>
+
+        <argument app:argType="string"
+            android:name="category"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.rehthink.iconfinder.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+
+        <action
+            android:id="@+id/action_searchFragment_to_iconsFragment"
+            app:destination="@id/iconsFragment" />
+    </fragment>
+
+
+</navigation>
